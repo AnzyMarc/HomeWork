@@ -40,12 +40,6 @@ ansible all -a "systemctl status tuned" -i inventory.ini
 * `{{ ansible_hostname }}` — сетевое имя сервера.
 * `{{ ansible_default_ipv4.address }}` — IP-адрес управления.
 
-**Фрагмент кода:**
-```yaml
-- name: Установка динамического приветствия
-  copy:
-    content: |
-      Welcome to server {{ ansible_hostname }}!
-      Your IP address is {{ ansible_default_ipv4.address }}.
-      Have a great day, System Administrator!
-    dest: /etc/motd
+### Проверка динамического приветствия
+
+![Скриншот MOTD](./screenshots/terminal_out.png)   
