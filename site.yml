@@ -1,0 +1,6 @@
+---
+- name: Установка веб-сервера через роль
+  hosts: webservers
+  become: yes
+  roles:
+    - apache_info

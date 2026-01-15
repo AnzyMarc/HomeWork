@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о сервере</title>
+</head>
+<body>
+    <h1>Характеристики сервера {{ ansible_hostname }}</h1>
+    <ul>
+        <li><strong>CPU:</strong> {{ ansible_processor_vcpus }} ядра</li>
+        <li><strong>RAM:</strong> {{ ansible_memtotal_mb }} MB</li>
+        <li><strong>Первый HDD:</strong> {{ ansible_devices.sda.size if ansible_devices.sda is defined else 'N/A' }}</li>
+        <li><strong>IP-адрес:</strong> {{ ansible_default_ipv4.address }}</li>
+    </ul>
+    <p>Хорошего дня, системный администратор!</p>
+</body>
+</html>
